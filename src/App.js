@@ -18,7 +18,7 @@ class App extends Component {
       <div style={{
         backgroundColor: '#f3faf4',
       }}>
-        <div className="vj-title" style={{borderBottom: '3px solid #145950'}}>
+        <div className="vj-title" style={{ borderBottom: '3px solid #145950' }}>
           <h1>AI視覺化判決書分析</h1>
           {REACT_APP_USER_AUTH === 'TRUE' ?
             <span className="float-right"><span>{/* UDIC LAB */}</span> | <span onClick={() => {
@@ -27,7 +27,13 @@ class App extends Component {
             }}
               style={{ cursor: 'pointer' }}
             >登出</span></span> :
-            <span className="float-right"><span>&nbsp;</span></span>}
+            <span className="float-right"><span>&nbsp;</span></span>
+          }
+          <span className='float-right'>
+            <a href="/?page=app2">
+            分析車牌、手機與銀行帳戶
+            </a>
+          </span>
         </div>
         <div className="container">
           {REACT_APP_USER_AUTH === 'TRUE' ? <LoginForm /> : <></>}
