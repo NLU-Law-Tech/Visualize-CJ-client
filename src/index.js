@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App1 from './App';
+import App2 from './PLA'
 import * as serviceWorker from './serviceWorker';
 import './assets/css/bootstrap.min.css'
 import MainReducer from './reducers/MainReducer.js'
@@ -19,9 +20,14 @@ if(typeof process.env.REACT_APP_API_HOST === 'undefined'){
 let rootReducer = combineReducers({MainReducer,VisualizeReducer})
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+console.log(params)
+let {page='app1'} = params
+
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        {page === 'app1'?<App1/>:<App2/>}
     </Provider>
     , document.getElementById('root'));
 

@@ -16,6 +16,8 @@ else{
     });
 }
 
+export {axios}
+
 export const getToken = (account, password, callbackOnFail = () => { }, callbackOnSuccess = () => { }) => {
 
     const reCreateAxios = (token) => {
